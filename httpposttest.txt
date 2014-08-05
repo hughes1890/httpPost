@@ -1,0 +1,40 @@
+-- phpMyAdmin SQL Dump
+-- version 4.1.12
+-- http://www.phpmyadmin.net
+--
+-- 主機: 127.0.0.1
+-- 產生時間： 2014 年 08 月 05 日 16:56
+-- 伺服器版本: 5.5.36
+-- PHP 版本： 5.4.27
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- 資料庫： `httpposttest`
+--
+CREATE DATABASE IF NOT EXISTS `httpposttest` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+USE `httpposttest`;
+
+-- --------------------------------------------------------
+
+--
+-- 資料表結構 `weblog`
+--
+
+DROP TABLE IF EXISTS `weblog`;
+CREATE TABLE IF NOT EXISTS `weblog` (
+  `log_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '編號',
+  `data` varchar(255) NOT NULL COMMENT '傳入的資料',
+  `post_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '發佈時間',
+  PRIMARY KEY (`log_id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='訊息記錄' AUTO_INCREMENT=4 ;
+
+--
+-- 資料表的匯出資料 `weblog`
+--
+
+INSERT INTO `weblog` (`log_id`, `data`, `post_time`) VALUES
+(1, '123', '2014-08-03 00:44:56'),
+(2, '123', '2014-08-03 00:46:42'),
+(3, '456', '2014-08-03 00:47:44');
